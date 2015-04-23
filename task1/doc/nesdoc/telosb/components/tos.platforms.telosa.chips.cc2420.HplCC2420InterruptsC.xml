@@ -1,0 +1,1042 @@
+<?xml version="1.0" ?><component loc="40:/opt/tinyos-2.1.2/tos/platforms/telosa/chips/cc2420/HplCC2420InterruptsC.nc" nicename="tos.platforms.telosa.chips.cc2420.HplCC2420InterruptsC" qname="HplCC2420InterruptsC">
+      <documentation loc="32:/opt/tinyos-2.1.2/tos/platforms/telosa/chips/cc2420/HplCC2420InterruptsC.nc">
+        <short>
+ HPL implementation of interrupts and captures for the ChipCon
+ CC2420 radio connected to a TI MSP430 processor.</short>
+        <long>
+ HPL implementation of interrupts and captures for the ChipCon
+ CC2420 radio connected to a TI MSP430 processor.
+
+ @author Jonathan Hui &lt;jhui@archrock.com&gt;
+ @version $Revision: 1.4 $ $Date: 2006-12-12 18:23:44 $
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="63:/opt/tinyos-2.1.2/tos/platforms/telosa/chips/cc2420/HplCC2420InterruptsC.nc">
+          <from><interface-ref name="CaptureSFD" ref="0x40b1ea80" scoped=""/></from>
+          <to><interface-ref name="Capture" ref="0x40b1dc90" scoped=""/></to>
+        </wire>
+        <wire loc="64:/opt/tinyos-2.1.2/tos/platforms/telosa/chips/cc2420/HplCC2420InterruptsC.nc">
+          <from><interface-ref name="InterruptCCA" ref="0x40b20198" scoped=""/></from>
+          <to><interface-ref name="Interrupt" ref="0x40bb5080" scoped=""/></to>
+        </wire>
+        <wire loc="65:/opt/tinyos-2.1.2/tos/platforms/telosa/chips/cc2420/HplCC2420InterruptsC.nc">
+          <from><interface-ref name="InterruptFIFOP" ref="0x40b208a8" scoped=""/></from>
+          <to><interface-ref name="Interrupt" ref="0x40bb4ab0" scoped=""/></to>
+        </wire>
+        <wire loc="53:/opt/tinyos-2.1.2/tos/platforms/telosa/chips/cc2420/HplCC2420InterruptsC.nc">
+          <from><interface-ref name="Msp430TimerControl" ref="0x40b1b330" scoped=""/></from>
+          <to><interface-ref name="ControlB1" ref="0x406887e8" scoped=""/></to>
+        </wire>
+        <wire loc="54:/opt/tinyos-2.1.2/tos/platforms/telosa/chips/cc2420/HplCC2420InterruptsC.nc">
+          <from><interface-ref name="Msp430Capture" ref="0x40b1bd68" scoped=""/></from>
+          <to><interface-ref name="CaptureB1" ref="0x40690010" scoped=""/></to>
+        </wire>
+        <wire loc="55:/opt/tinyos-2.1.2/tos/platforms/telosa/chips/cc2420/HplCC2420InterruptsC.nc">
+          <from><interface-ref name="GeneralIO" ref="0x40b355f0" scoped=""/></from>
+          <to><interface-ref name="Port41" ref="0x40786288" scoped=""/></to>
+        </wire>
+        <wire loc="60:/opt/tinyos-2.1.2/tos/platforms/telosa/chips/cc2420/HplCC2420InterruptsC.nc">
+          <from><interface-ref name="HplInterrupt" ref="0x40bb5678" scoped=""/></from>
+          <to><interface-ref name="Port14" ref="0x40b2c368" scoped=""/></to>
+        </wire>
+        <wire loc="61:/opt/tinyos-2.1.2/tos/platforms/telosa/chips/cc2420/HplCC2420InterruptsC.nc">
+          <from><interface-ref name="HplInterrupt" ref="0x40bd40b8" scoped=""/></from>
+          <to><interface-ref name="Port10" ref="0x40b2f030" scoped=""/></to>
+        </wire>
+      </wiring>
+    <specification><interface loc="42:/opt/tinyos-2.1.2/tos/platforms/telosa/chips/cc2420/HplCC2420InterruptsC.nc" name="CaptureSFD" provided="1" ref="0x40b1ea80">
+      <component-ref nicename="tos.platforms.telosa.chips.cc2420.HplCC2420InterruptsC" qname="HplCC2420InterruptsC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="CaptureSFD" ref="0x40b1ea80" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.GpioCapture" qname="GpioCapture"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="captureFallingEdge" ref="0x40b1ec58" scoped=""/>
+        <function-ref name="disable" ref="0x40b1ed38" scoped=""/>
+        <function-ref name="captured" ref="0x40b1ee18" scoped=""/>
+        <function-ref name="captureRisingEdge" ref="0x40b1eef8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="43:/opt/tinyos-2.1.2/tos/platforms/telosa/chips/cc2420/HplCC2420InterruptsC.nc" name="InterruptCCA" provided="1" ref="0x40b20198">
+      <component-ref nicename="tos.platforms.telosa.chips.cc2420.HplCC2420InterruptsC" qname="HplCC2420InterruptsC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="InterruptCCA" ref="0x40b20198" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.GpioInterrupt" qname="GpioInterrupt"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="fired" ref="0x40b20370" scoped=""/>
+        <function-ref name="disable" ref="0x40b20450" scoped=""/>
+        <function-ref name="enableFallingEdge" ref="0x40b20530" scoped=""/>
+        <function-ref name="enableRisingEdge" ref="0x40b20610" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="44:/opt/tinyos-2.1.2/tos/platforms/telosa/chips/cc2420/HplCC2420InterruptsC.nc" name="InterruptFIFOP" provided="1" ref="0x40b208a8">
+      <component-ref nicename="tos.platforms.telosa.chips.cc2420.HplCC2420InterruptsC" qname="HplCC2420InterruptsC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="InterruptFIFOP" ref="0x40b208a8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.GpioInterrupt" qname="GpioInterrupt"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="fired" ref="0x40b20a80" scoped=""/>
+        <function-ref name="disable" ref="0x40b20b60" scoped=""/>
+        <function-ref name="enableFallingEdge" ref="0x40b20c40" scoped=""/>
+        <function-ref name="enableRisingEdge" ref="0x40b20d20" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced><interface loc="42:/opt/tinyos-2.1.2/tos/chips/msp430/timer/GpioCaptureC.nc" name="Msp430Capture" provided="0" ref="0x40b1bd68">
+      <component-ref nicename="tos.chips.msp430.timer.GpioCaptureC" qname="HplCC2420InterruptsC.CaptureSFDC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Msp430Capture" ref="0x40b1bd68" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.msp430.timer.Msp430Capture" qname="Msp430Capture"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getEvent" ref="0x40b35010" scoped=""/>
+        <function-ref name="setSynchronous" ref="0x40b350f0" scoped=""/>
+        <function-ref name="captured" ref="0x40b351d0" scoped=""/>
+        <function-ref name="clearOverflow" ref="0x40b352b0" scoped=""/>
+        <function-ref name="isOverflowPending" ref="0x40b35390" scoped=""/>
+        <function-ref name="setEdge" ref="0x40b35470" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="46:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430InterruptC.nc" name="Port14" provided="1" ref="0x40b2c368">
+      <component-ref nicename="tos.chips.msp430.pins.HplMsp430InterruptC" qname="HplMsp430InterruptC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Port14" ref="0x40b2c368" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.msp430.pins.HplMsp430Interrupt" qname="HplMsp430Interrupt"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x40b2c540" scoped=""/>
+        <function-ref name="fired" ref="0x40b2c620" scoped=""/>
+        <function-ref name="disable" ref="0x40b2c700" scoped=""/>
+        <function-ref name="edge" ref="0x40b2c7e0" scoped=""/>
+        <function-ref name="enable" ref="0x40b2c8c0" scoped=""/>
+        <function-ref name="getValue" ref="0x40b2c9a0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="52:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc" name="ControlB1" provided="1" ref="0x406887e8">
+      <component-ref nicename="tos.chips.msp430.timer.Msp430TimerC" qname="Msp430TimerC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="ControlB1" ref="0x406887e8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.msp430.timer.Msp430TimerControl" qname="Msp430TimerControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="setControlAsCapture" ref="0x40688a40" scoped=""/>
+        <function-ref name="getControl" ref="0x40688b20" scoped=""/>
+        <function-ref name="enableEvents" ref="0x40688c00" scoped=""/>
+        <function-ref name="areEventsEnabled" ref="0x40688ce0" scoped=""/>
+        <function-ref name="setControlAsCompare" ref="0x40688dc0" scoped=""/>
+        <function-ref name="disableEvents" ref="0x40688ea0" scoped=""/>
+        <function-ref name="isInterruptPending" ref="0x40687010" scoped=""/>
+        <function-ref name="clearPendingInterrupt" ref="0x406870f0" scoped=""/>
+        <function-ref name="setControl" ref="0x406871d0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="43:/opt/tinyos-2.1.2/tos/chips/msp430/timer/GpioCaptureC.nc" name="GeneralIO" provided="0" ref="0x40b355f0">
+      <component-ref nicename="tos.chips.msp430.timer.GpioCaptureC" qname="HplCC2420InterruptsC.CaptureSFDC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="GeneralIO" ref="0x40b355f0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.msp430.pins.HplMsp430GeneralIO" qname="HplMsp430GeneralIO"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="makeInput" ref="0x40b357c8" scoped=""/>
+        <function-ref name="isInput" ref="0x40b358a8" scoped=""/>
+        <function-ref name="setResistor" ref="0x40b35988" scoped=""/>
+        <function-ref name="toggle" ref="0x40b35a68" scoped=""/>
+        <function-ref name="isOutput" ref="0x40b35b48" scoped=""/>
+        <function-ref name="getResistor" ref="0x40b35c28" scoped=""/>
+        <function-ref name="makeOutput" ref="0x40b35d08" scoped=""/>
+        <function-ref name="get" ref="0x40b35de8" scoped=""/>
+        <function-ref name="selectIOFunc" ref="0x40b35ec8" scoped=""/>
+        <function-ref name="getRaw" ref="0x40b34010" scoped=""/>
+        <function-ref name="set" ref="0x40b340f0" scoped=""/>
+        <function-ref name="selectModuleFunc" ref="0x40b341d0" scoped=""/>
+        <function-ref name="isIOFunc" ref="0x40b342b0" scoped=""/>
+        <function-ref name="isModuleFunc" ref="0x40b34410" scoped=""/>
+        <function-ref name="clr" ref="0x40b344f0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="41:/opt/tinyos-2.1.2/tos/chips/msp430/timer/GpioCaptureC.nc" name="Msp430TimerControl" provided="0" ref="0x40b1b330">
+      <component-ref nicename="tos.chips.msp430.timer.GpioCaptureC" qname="HplCC2420InterruptsC.CaptureSFDC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Msp430TimerControl" ref="0x40b1b330" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.msp430.timer.Msp430TimerControl" qname="Msp430TimerControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="setControlAsCapture" ref="0x40b1b508" scoped=""/>
+        <function-ref name="getControl" ref="0x40b1b5e8" scoped=""/>
+        <function-ref name="enableEvents" ref="0x40b1b6c8" scoped=""/>
+        <function-ref name="areEventsEnabled" ref="0x40b1b7a8" scoped=""/>
+        <function-ref name="setControlAsCompare" ref="0x40b1b888" scoped=""/>
+        <function-ref name="disableEvents" ref="0x40b1b968" scoped=""/>
+        <function-ref name="isInterruptPending" ref="0x40b1ba48" scoped=""/>
+        <function-ref name="clearPendingInterrupt" ref="0x40b1bb28" scoped=""/>
+        <function-ref name="setControl" ref="0x40b1bc08" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="46:/opt/tinyos-2.1.2/tos/chips/msp430/pins/Msp430InterruptC.nc" name="HplInterrupt" provided="0" ref="0x40bb5678">
+      <component-ref nicename="tos.chips.msp430.pins.Msp430InterruptC" qname="HplCC2420InterruptsC.InterruptCCAC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="HplInterrupt" ref="0x40bb5678" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.msp430.pins.HplMsp430Interrupt" qname="HplMsp430Interrupt"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x40bb5850" scoped=""/>
+        <function-ref name="fired" ref="0x40bb5930" scoped=""/>
+        <function-ref name="disable" ref="0x40bb5a10" scoped=""/>
+        <function-ref name="edge" ref="0x40bb5af0" scoped=""/>
+        <function-ref name="enable" ref="0x40bb5bd0" scoped=""/>
+        <function-ref name="getValue" ref="0x40bb5cb0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="40:/opt/tinyos-2.1.2/tos/chips/msp430/timer/GpioCaptureC.nc" name="Capture" provided="1" ref="0x40b1dc90">
+      <component-ref nicename="tos.chips.msp430.timer.GpioCaptureC" qname="HplCC2420InterruptsC.CaptureSFDC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Capture" ref="0x40b1dc90" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.GpioCapture" qname="GpioCapture"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="captureFallingEdge" ref="0x40b1de68" scoped=""/>
+        <function-ref name="disable" ref="0x40b1b010" scoped=""/>
+        <function-ref name="captured" ref="0x40b1b0f0" scoped=""/>
+        <function-ref name="captureRisingEdge" ref="0x40b1b1d0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="45:/opt/tinyos-2.1.2/tos/chips/msp430/pins/Msp430InterruptC.nc" name="Interrupt" provided="1" ref="0x40bb4ab0">
+      <component-ref nicename="tos.chips.msp430.pins.Msp430InterruptC" qname="HplCC2420InterruptsC.InterruptFIFOPC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Interrupt" ref="0x40bb4ab0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.GpioInterrupt" qname="GpioInterrupt"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="fired" ref="0x40bb4c88" scoped=""/>
+        <function-ref name="disable" ref="0x40bb4d68" scoped=""/>
+        <function-ref name="enableFallingEdge" ref="0x40bb4e48" scoped=""/>
+        <function-ref name="enableRisingEdge" ref="0x40bb4f28" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="46:/opt/tinyos-2.1.2/tos/chips/msp430/pins/Msp430InterruptC.nc" name="HplInterrupt" provided="0" ref="0x40bd40b8">
+      <component-ref nicename="tos.chips.msp430.pins.Msp430InterruptC" qname="HplCC2420InterruptsC.InterruptFIFOPC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="HplInterrupt" ref="0x40bd40b8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.msp430.pins.HplMsp430Interrupt" qname="HplMsp430Interrupt"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x40bd4290" scoped=""/>
+        <function-ref name="fired" ref="0x40bd4370" scoped=""/>
+        <function-ref name="disable" ref="0x40bd4450" scoped=""/>
+        <function-ref name="edge" ref="0x40bd4530" scoped=""/>
+        <function-ref name="enable" ref="0x40bd4610" scoped=""/>
+        <function-ref name="getValue" ref="0x40bd46f0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="83:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc" name="Port41" provided="1" ref="0x40786288">
+      <component-ref nicename="tos.chips.msp430.pins.HplMsp430GeneralIOC" qname="HplMsp430GeneralIOC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Port41" ref="0x40786288" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.msp430.pins.HplMsp430GeneralIO" qname="HplMsp430GeneralIO"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="makeInput" ref="0x40786460" scoped=""/>
+        <function-ref name="isInput" ref="0x40786540" scoped=""/>
+        <function-ref name="setResistor" ref="0x40786620" scoped=""/>
+        <function-ref name="toggle" ref="0x40786700" scoped=""/>
+        <function-ref name="isOutput" ref="0x407867e0" scoped=""/>
+        <function-ref name="getResistor" ref="0x407868c0" scoped=""/>
+        <function-ref name="makeOutput" ref="0x407869a0" scoped=""/>
+        <function-ref name="get" ref="0x40786a80" scoped=""/>
+        <function-ref name="selectIOFunc" ref="0x40786b60" scoped=""/>
+        <function-ref name="getRaw" ref="0x40786c40" scoped=""/>
+        <function-ref name="set" ref="0x40786d20" scoped=""/>
+        <function-ref name="selectModuleFunc" ref="0x40786e00" scoped=""/>
+        <function-ref name="isIOFunc" ref="0x40786ee0" scoped=""/>
+        <function-ref name="isModuleFunc" ref="0x40785090" scoped=""/>
+        <function-ref name="clr" ref="0x40785170" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="42:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430InterruptC.nc" name="Port10" provided="1" ref="0x40b2f030">
+      <component-ref nicename="tos.chips.msp430.pins.HplMsp430InterruptC" qname="HplMsp430InterruptC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Port10" ref="0x40b2f030" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.msp430.pins.HplMsp430Interrupt" qname="HplMsp430Interrupt"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x40b2f208" scoped=""/>
+        <function-ref name="fired" ref="0x40b2f2e8" scoped=""/>
+        <function-ref name="disable" ref="0x40b2f3c8" scoped=""/>
+        <function-ref name="edge" ref="0x40b2f4a8" scoped=""/>
+        <function-ref name="enable" ref="0x40b2f588" scoped=""/>
+        <function-ref name="getValue" ref="0x40b2f668" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="45:/opt/tinyos-2.1.2/tos/chips/msp430/pins/Msp430InterruptC.nc" name="Interrupt" provided="1" ref="0x40bb5080">
+      <component-ref nicename="tos.chips.msp430.pins.Msp430InterruptC" qname="HplCC2420InterruptsC.InterruptCCAC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Interrupt" ref="0x40bb5080" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.GpioInterrupt" qname="GpioInterrupt"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="fired" ref="0x40bb5258" scoped=""/>
+        <function-ref name="disable" ref="0x40bb5338" scoped=""/>
+        <function-ref name="enableFallingEdge" ref="0x40bb5418" scoped=""/>
+        <function-ref name="enableRisingEdge" ref="0x40bb54f8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="66:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc" name="CaptureB1" provided="1" ref="0x40690010">
+      <component-ref nicename="tos.chips.msp430.timer.Msp430TimerC" qname="Msp430TimerC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="CaptureB1" ref="0x40690010" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.msp430.timer.Msp430Capture" qname="Msp430Capture"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getEvent" ref="0x406901e8" scoped=""/>
+        <function-ref name="setSynchronous" ref="0x406902c8" scoped=""/>
+        <function-ref name="captured" ref="0x406903a8" scoped=""/>
+        <function-ref name="clearOverflow" ref="0x40690488" scoped=""/>
+        <function-ref name="isOverflowPending" ref="0x40690568" scoped=""/>
+        <function-ref name="setEdge" ref="0x40690648" scoped=""/>
+      </interface-functions>
+    </interface><component loc="38(HplCC2420InterruptsC.CaptureSFDC):/opt/tinyos-2.1.2/tos/chips/msp430/timer/GpioCaptureC.nc" nicename="tos.chips.msp430.timer.GpioCaptureC" qname="HplCC2420InterruptsC.CaptureSFDC">
+      <documentation loc="33:/opt/tinyos-2.1.2/tos/chips/msp430/timer/GpioCaptureC.nc">
+        <short>
+ </short>
+        <long>
+ @author Jonathan Hui
+ @author Joe Polastre
+</long>
+      </documentation>
+      <instance number="0">
+        <component-ref nicename="tos.chips.msp430.timer.GpioCaptureC" qname="GpioCaptureC"/>
+      </instance>
+      <module/>
+    </component><component loc="39:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430InterruptC.nc" nicename="tos.chips.msp430.pins.HplMsp430InterruptC" qname="HplMsp430InterruptC">
+      <documentation loc="33:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430InterruptC.nc">
+        <short>
+ HPL for the TI MSP430 family of microprocessors.</short>
+        <long>
+ HPL for the TI MSP430 family of microprocessors. This provides an
+ abstraction for GPIO interrupts.
+
+ @author Joe Polastre
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="70:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430InterruptC.nc">
+          <from><interface-ref name="Port14" ref="0x40b2c368" scoped=""/></from>
+          <to><interface-ref name="Port14" ref="0x40b46a38" scoped=""/></to>
+        </wire>
+        <wire loc="82:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430InterruptC.nc">
+          <from><interface-ref name="Port26" ref="0x40b4ccf8" scoped=""/></from>
+          <to><interface-ref name="Port26" ref="0x40b40448" scoped=""/></to>
+        </wire>
+        <wire loc="73:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430InterruptC.nc">
+          <from><interface-ref name="Port17" ref="0x40b50dd8" scoped=""/></from>
+          <to><interface-ref name="Port17" ref="0x40b44528" scoped=""/></to>
+        </wire>
+        <wire loc="77:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430InterruptC.nc">
+          <from><interface-ref name="Port21" ref="0x40b4e010" scoped=""/></from>
+          <to><interface-ref name="Port21" ref="0x40b436e8" scoped=""/></to>
+        </wire>
+        <wire loc="68:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430InterruptC.nc">
+          <from><interface-ref name="Port12" ref="0x40b2e1a8" scoped=""/></from>
+          <to><interface-ref name="Port12" ref="0x40b478c0" scoped=""/></to>
+        </wire>
+        <wire loc="80:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430InterruptC.nc">
+          <from><interface-ref name="Port24" ref="0x40b4da38" scoped=""/></from>
+          <to><interface-ref name="Port24" ref="0x40b41188" scoped=""/></to>
+        </wire>
+        <wire loc="71:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430InterruptC.nc">
+          <from><interface-ref name="Port15" ref="0x40b2cc18" scoped=""/></from>
+          <to><interface-ref name="Port15" ref="0x40b45368" scoped=""/></to>
+        </wire>
+        <wire loc="83:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430InterruptC.nc">
+          <from><interface-ref name="Port27" ref="0x40b4b608" scoped=""/></from>
+          <to><interface-ref name="Port27" ref="0x40b40cf8" scoped=""/></to>
+        </wire>
+        <wire loc="66:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430InterruptC.nc">
+          <from><interface-ref name="Port10" ref="0x40b2f030" scoped=""/></from>
+          <to><interface-ref name="Port10" ref="0x40b4a720" scoped=""/></to>
+        </wire>
+        <wire loc="78:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430InterruptC.nc">
+          <from><interface-ref name="Port22" ref="0x40b4e8c0" scoped=""/></from>
+          <to><interface-ref name="Port22" ref="0x40b42010" scoped=""/></to>
+        </wire>
+        <wire loc="69:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430InterruptC.nc">
+          <from><interface-ref name="Port13" ref="0x40b2ea58" scoped=""/></from>
+          <to><interface-ref name="Port13" ref="0x40b46188" scoped=""/></to>
+        </wire>
+        <wire loc="81:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430InterruptC.nc">
+          <from><interface-ref name="Port25" ref="0x40b4c448" scoped=""/></from>
+          <to><interface-ref name="Port25" ref="0x40b41ab8" scoped=""/></to>
+        </wire>
+        <wire loc="72:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430InterruptC.nc">
+          <from><interface-ref name="Port16" ref="0x40b50528" scoped=""/></from>
+          <to><interface-ref name="Port16" ref="0x40b45c18" scoped=""/></to>
+        </wire>
+        <wire loc="76:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430InterruptC.nc">
+          <from><interface-ref name="Port20" ref="0x40b4f6e8" scoped=""/></from>
+          <to><interface-ref name="Port20" ref="0x40b44dd8" scoped=""/></to>
+        </wire>
+        <wire loc="67:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430InterruptC.nc">
+          <from><interface-ref name="Port11" ref="0x40b2f8e0" scoped=""/></from>
+          <to><interface-ref name="Port11" ref="0x40b47010" scoped=""/></to>
+        </wire>
+        <wire loc="79:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430InterruptC.nc">
+          <from><interface-ref name="Port23" ref="0x40b4d188" scoped=""/></from>
+          <to><interface-ref name="Port23" ref="0x40b428c0" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component><component loc="43(HplCC2420InterruptsC.InterruptCCAC):/opt/tinyos-2.1.2/tos/chips/msp430/pins/Msp430InterruptC.nc" nicename="tos.chips.msp430.pins.Msp430InterruptC" qname="HplCC2420InterruptsC.InterruptCCAC">
+      <documentation loc="33:/opt/tinyos-2.1.2/tos/chips/msp430/pins/Msp430InterruptC.nc">
+        <short>
+ Implementation of the GPIO interrupt abstraction for
+ the TI MSP430 microcontroller.</short>
+        <long>
+ Implementation of the GPIO interrupt abstraction for
+ the TI MSP430 microcontroller.
+
+ @author Jonathan Hui
+ @author Joe Polastre
+ @see  Please refer to TEP 117 for more information about this component and its
+          intended use.
+</long>
+      </documentation>
+      <instance number="0">
+        <component-ref nicename="tos.chips.msp430.pins.Msp430InterruptC" qname="Msp430InterruptC"/>
+      </instance>
+      <module/>
+    </component><component loc="43(HplCC2420InterruptsC.InterruptFIFOPC):/opt/tinyos-2.1.2/tos/chips/msp430/pins/Msp430InterruptC.nc" nicename="tos.chips.msp430.pins.Msp430InterruptC" qname="HplCC2420InterruptsC.InterruptFIFOPC">
+      <documentation loc="33:/opt/tinyos-2.1.2/tos/chips/msp430/pins/Msp430InterruptC.nc">
+        <short>
+ Implementation of the GPIO interrupt abstraction for
+ the TI MSP430 microcontroller.</short>
+        <long>
+ Implementation of the GPIO interrupt abstraction for
+ the TI MSP430 microcontroller.
+
+ @author Jonathan Hui
+ @author Joe Polastre
+ @see  Please refer to TEP 117 for more information about this component and its
+          intended use.
+</long>
+      </documentation>
+      <instance number="1">
+        <component-ref nicename="tos.chips.msp430.pins.Msp430InterruptC" qname="Msp430InterruptC"/>
+      </instance>
+      <module/>
+    </component><component loc="45:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc" nicename="tos.chips.msp430.pins.HplMsp430GeneralIOC" qname="HplMsp430GeneralIOC">
+      <documentation loc="35:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+        <short>
+ HPL for the TI MSP430 family of microprocessors.</short>
+        <long>
+ HPL for the TI MSP430 family of microprocessors. This provides an
+ abstraction for general-purpose I/O.
+
+ @author Joe Polastre
+ @author Xavier Orduna &lt;xorduna@dexmatech.com&gt;
+ @author Peter A. Bigot &lt;pab@peoplepowerco.com&gt;
+ @author Eric B. Decker &lt;cire831@gmail.com&gt;
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="442:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port14" ref="0x4075dbc8" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407d0010" scoped=""/></to>
+        </wire>
+        <wire loc="455:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port26" ref="0x40768d88" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407e8d68" scoped=""/></to>
+        </wire>
+        <wire loc="531:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="SDA" ref="0x40797f28" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407f75c8" scoped=""/></to>
+        </wire>
+        <wire loc="551:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="ADC6" ref="0x407b1c98" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x40842d68" scoped=""/></to>
+        </wire>
+        <wire loc="532:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="SOMI0" ref="0x40795068" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407f5d68" scoped=""/></to>
+        </wire>
+        <wire loc="460:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port30" ref="0x4077a178" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407fad68" scoped=""/></to>
+        </wire>
+        <wire loc="473:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port42" ref="0x407853e8" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x40811d68" scoped=""/></to>
+        </wire>
+        <wire loc="486:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port54" ref="0x407904c8" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x40828d68" scoped=""/></to>
+        </wire>
+        <wire loc="497:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port64" ref="0x4079d368" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x40847d68" scoped=""/></to>
+        </wire>
+        <wire loc="535:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="UTXD0" ref="0x407a84c0" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x40808d68" scoped=""/></to>
+        </wire>
+        <wire loc="545:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="ADC0" ref="0x4079f280" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x40838d68" scoped=""/></to>
+        </wire>
+        <wire loc="557:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="SVSIN" ref="0x407ac288" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x4083f5c8" scoped=""/></to>
+        </wire>
+        <wire loc="445:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port17" ref="0x4076f178" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407e15c8" scoped=""/></to>
+        </wire>
+        <wire loc="536:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="URXD0" ref="0x407a7680" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x408055c8" scoped=""/></to>
+        </wire>
+        <wire loc="450:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port21" ref="0x4076d4c8" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407dc5c8" scoped=""/></to>
+        </wire>
+        <wire loc="463:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port33" ref="0x40777688" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407f25c8" scoped=""/></to>
+        </wire>
+        <wire loc="476:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port45" ref="0x40782928" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x408205c8" scoped=""/></to>
+        </wire>
+        <wire loc="489:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port57" ref="0x4078da08" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x4083a5c8" scoped=""/></to>
+        </wire>
+        <wire loc="500:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port67" ref="0x4079a848" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x4083f5c8" scoped=""/></to>
+        </wire>
+        <wire loc="440:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port12" ref="0x40765848" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407d5140" scoped=""/></to>
+        </wire>
+        <wire loc="453:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port24" ref="0x4076aa08" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407edde8" scoped=""/></to>
+        </wire>
+        <wire loc="466:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port36" ref="0x40774bc8" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x40803d68" scoped=""/></to>
+        </wire>
+        <wire loc="530:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="SIMO0" ref="0x40798d80" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407f75c8" scoped=""/></to>
+        </wire>
+        <wire loc="548:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="ADC3" ref="0x407b4758" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x4082f5c8" scoped=""/></to>
+        </wire>
+        <wire loc="555:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="DAC1" ref="0x407ad168" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x4083f5c8" scoped=""/></to>
+        </wire>
+        <wire loc="541:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="UCLK1" ref="0x407a3d80" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x4082a5c8" scoped=""/></to>
+        </wire>
+        <wire loc="471:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port40" ref="0x40787010" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407fee68" scoped=""/></to>
+        </wire>
+        <wire loc="484:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port52" ref="0x40792178" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x4082dd68" scoped=""/></to>
+        </wire>
+        <wire loc="495:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port62" ref="0x40789010" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x40832d68" scoped=""/></to>
+        </wire>
+        <wire loc="549:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="ADC4" ref="0x407b3918" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x40847d68" scoped=""/></to>
+        </wire>
+        <wire loc="538:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="STE1" ref="0x407a6838" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x40819d68" scoped=""/></to>
+        </wire>
+        <wire loc="443:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port15" ref="0x4075cd88" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407ce730" scoped=""/></to>
+        </wire>
+        <wire loc="456:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port27" ref="0x4077b010" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407fc5c8" scoped=""/></to>
+        </wire>
+        <wire loc="493:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port60" ref="0x4078cbc8" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x40838d68" scoped=""/></to>
+        </wire>
+        <wire loc="461:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port31" ref="0x40779368" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407f75c8" scoped=""/></to>
+        </wire>
+        <wire loc="474:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port43" ref="0x407845a8" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x4080e5c8" scoped=""/></to>
+        </wire>
+        <wire loc="487:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port55" ref="0x4078f688" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x408255c8" scoped=""/></to>
+        </wire>
+        <wire loc="498:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port65" ref="0x4079c4c8" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x408445c8" scoped=""/></to>
+        </wire>
+        <wire loc="540:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="SOMI1" ref="0x407a4bc0" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x4082dd68" scoped=""/></to>
+        </wire>
+        <wire loc="438:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port10" ref="0x4075f558" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407c0220" scoped=""/></to>
+        </wire>
+        <wire loc="451:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port22" ref="0x4076c688" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407dad68" scoped=""/></to>
+        </wire>
+        <wire loc="464:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port34" ref="0x40776848" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x40808d68" scoped=""/></to>
+        </wire>
+        <wire loc="477:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port46" ref="0x40781ae8" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x4081ed68" scoped=""/></to>
+        </wire>
+        <wire loc="542:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="UTXD1" ref="0x407a1010" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x40803d68" scoped=""/></to>
+        </wire>
+        <wire loc="546:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="ADC1" ref="0x4079e3d8" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x408345c8" scoped=""/></to>
+        </wire>
+        <wire loc="552:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="ADC7" ref="0x407b0e58" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x4083f5c8" scoped=""/></to>
+        </wire>
+        <wire loc="482:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port50" ref="0x4077fe68" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x40819d68" scoped=""/></to>
+        </wire>
+        <wire loc="543:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="URXD1" ref="0x407a0170" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x408005c8" scoped=""/></to>
+        </wire>
+        <wire loc="441:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port13" ref="0x4075ea08" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407d38a0" scoped=""/></to>
+        </wire>
+        <wire loc="454:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port25" ref="0x40769bc8" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407ea5c8" scoped=""/></to>
+        </wire>
+        <wire loc="467:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port37" ref="0x40773d88" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x408005c8" scoped=""/></to>
+        </wire>
+        <wire loc="539:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="SIMO1" ref="0x407a5a00" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x408165c8" scoped=""/></to>
+        </wire>
+        <wire loc="550:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="ADC5" ref="0x407b2ad8" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x408445c8" scoped=""/></to>
+        </wire>
+        <wire loc="472:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port41" ref="0x40786288" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x408135c8" scoped=""/></to>
+        </wire>
+        <wire loc="485:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port53" ref="0x40791368" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x4082a5c8" scoped=""/></to>
+        </wire>
+        <wire loc="496:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port63" ref="0x40788178" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x4082f5c8" scoped=""/></to>
+        </wire>
+        <wire loc="444:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port16" ref="0x40770010" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407e4df8" scoped=""/></to>
+        </wire>
+        <wire loc="494:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port61" ref="0x4078bd88" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x408345c8" scoped=""/></to>
+        </wire>
+        <wire loc="449:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port20" ref="0x4076e368" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407dfd68" scoped=""/></to>
+        </wire>
+        <wire loc="462:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port32" ref="0x407784c8" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407f5d68" scoped=""/></to>
+        </wire>
+        <wire loc="475:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port44" ref="0x40783768" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x4080bd68" scoped=""/></to>
+        </wire>
+        <wire loc="488:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port56" ref="0x4078e848" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x40823d68" scoped=""/></to>
+        </wire>
+        <wire loc="499:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port66" ref="0x4079b688" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x40842d68" scoped=""/></to>
+        </wire>
+        <wire loc="439:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port11" ref="0x40766688" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407d9918" scoped=""/></to>
+        </wire>
+        <wire loc="452:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port23" ref="0x4076b848" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407ef5c8" scoped=""/></to>
+        </wire>
+        <wire loc="465:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port35" ref="0x40775a08" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x408055c8" scoped=""/></to>
+        </wire>
+        <wire loc="478:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port47" ref="0x40780ca8" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x4081b5c8" scoped=""/></to>
+        </wire>
+        <wire loc="534:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="SCL" ref="0x40793348" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407f25c8" scoped=""/></to>
+        </wire>
+        <wire loc="547:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="ADC2" ref="0x407b5598" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x40832d68" scoped=""/></to>
+        </wire>
+        <wire loc="533:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="UCLK0" ref="0x407941a0" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407f25c8" scoped=""/></to>
+        </wire>
+        <wire loc="483:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="Port51" ref="0x4077d010" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x408165c8" scoped=""/></to>
+        </wire>
+        <wire loc="554:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="DAC0" ref="0x407ae010" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x40842d68" scoped=""/></to>
+        </wire>
+        <wire loc="558:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="SVSOUT" ref="0x407ab3e8" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x4083a5c8" scoped=""/></to>
+        </wire>
+        <wire loc="529:/opt/tinyos-2.1.2/tos/chips/msp430/pins/HplMsp430GeneralIOC.nc">
+          <from><interface-ref name="STE0" ref="0x40799a28" scoped=""/></from>
+          <to><interface-ref name="IO" ref="0x407fad68" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component><component loc="37:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc" nicename="tos.chips.msp430.timer.Msp430TimerC" qname="Msp430TimerC">
+      <documentation loc="33:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+        <short>
+ </short>
+        <long>
+ @author Cory Sharp &lt;cssharp@eecs.berkeley.edu&gt;
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="113:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="ControlA2" ref="0x40684010" scoped=""/></from>
+          <to><interface-ref name="Control" ref="0x406e9120" scoped=""/></to>
+        </wire>
+        <wire loc="126:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="ControlB0" ref="0x4068cba8" scoped=""/></from>
+          <to><interface-ref name="Control" ref="0x406f9010" scoped=""/></to>
+        </wire>
+        <wire loc="108:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="CaptureA1" ref="0x40689d28" scoped=""/></from>
+          <to><interface-ref name="Capture" ref="0x406ed430" scoped=""/></to>
+        </wire>
+        <wire loc="149:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="CaptureB3" ref="0x4068f168" scoped=""/></from>
+          <to><interface-ref name="Capture" ref="0x40700cc8" scoped=""/></to>
+        </wire>
+        <wire loc="107:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="CompareA1" ref="0x4068eee8" scoped=""/></from>
+          <to><interface-ref name="Compare" ref="0x406eec78" scoped=""/></to>
+        </wire>
+        <wire loc="148:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="CompareB3" ref="0x406935f8" scoped=""/></from>
+          <to><interface-ref name="Compare" ref="0x407005f0" scoped=""/></to>
+        </wire>
+        <wire loc="170:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="CaptureB6" ref="0x406a0bf8" scoped=""/></from>
+          <to><interface-ref name="Capture" ref="0x40707a28" scoped=""/></to>
+        </wire>
+        <wire loc="154:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="ControlB4" ref="0x40686b80" scoped=""/></from>
+          <to><interface-ref name="Control" ref="0x406fda10" scoped=""/></to>
+        </wire>
+        <wire loc="99:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="ControlA0" ref="0x40680830" scoped=""/></from>
+          <to><interface-ref name="Control" ref="0x406b53e0" scoped=""/></to>
+        </wire>
+        <wire loc="135:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="CaptureB1" ref="0x40690010" scoped=""/></from>
+          <to><interface-ref name="Capture" ref="0x406f4010" scoped=""/></to>
+        </wire>
+        <wire loc="134:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="CompareB1" ref="0x406945f8" scoped=""/></from>
+          <to><interface-ref name="Compare" ref="0x406f58d0" scoped=""/></to>
+        </wire>
+        <wire loc="133:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="ControlB1" ref="0x406887e8" scoped=""/></from>
+          <to><interface-ref name="Control" ref="0x406f6e68" scoped=""/></to>
+        </wire>
+        <wire loc="115:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="CaptureA2" ref="0x4067e5f8" scoped=""/></from>
+          <to><interface-ref name="Capture" ref="0x406e8270" scoped=""/></to>
+        </wire>
+        <wire loc="156:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="CaptureB4" ref="0x4068fa08" scoped=""/></from>
+          <to><interface-ref name="Capture" ref="0x406fcbe8" scoped=""/></to>
+        </wire>
+        <wire loc="140:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="ControlB2" ref="0x40687468" scoped=""/></from>
+          <to><interface-ref name="Control" ref="0x406f2ca8" scoped=""/></to>
+        </wire>
+        <wire loc="114:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="CompareA2" ref="0x4067f6c8" scoped=""/></from>
+          <to><interface-ref name="Compare" ref="0x406e9b78" scoped=""/></to>
+        </wire>
+        <wire loc="93:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="TimerA" ref="0x40685c40" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x4069d9c0" scoped=""/></to>
+        </wire>
+        <wire loc="155:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="CompareB4" ref="0x40693db8" scoped=""/></from>
+          <to><interface-ref name="Compare" ref="0x406fc510" scoped=""/></to>
+        </wire>
+        <wire loc="106:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="ControlA1" ref="0x40677468" scoped=""/></from>
+          <to><interface-ref name="Control" ref="0x406ee220" scoped=""/></to>
+        </wire>
+        <wire loc="161:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="ControlB5" ref="0x40697708" scoped=""/></from>
+          <to><interface-ref name="Control" ref="0x4070d8f8" scoped=""/></to>
+        </wire>
+        <wire loc="101:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="CaptureA0" ref="0x40689488" scoped=""/></from>
+          <to><interface-ref name="Capture" ref="0x406c8550" scoped=""/></to>
+        </wire>
+        <wire loc="142:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="CaptureB2" ref="0x406908b0" scoped=""/></from>
+          <to><interface-ref name="Capture" ref="0x40704e88" scoped=""/></to>
+        </wire>
+        <wire loc="100:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="CompareA0" ref="0x4068e728" scoped=""/></from>
+          <to><interface-ref name="Compare" ref="0x406b5e38" scoped=""/></to>
+        </wire>
+        <wire loc="141:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="CompareB2" ref="0x40694db8" scoped=""/></from>
+          <to><interface-ref name="Compare" ref="0x407047b0" scoped=""/></to>
+        </wire>
+        <wire loc="163:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="CaptureB5" ref="0x406a0358" scoped=""/></from>
+          <to><interface-ref name="Capture" ref="0x4070cb08" scoped=""/></to>
+        </wire>
+        <wire loc="147:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="ControlB3" ref="0x40686010" scoped=""/></from>
+          <to><interface-ref name="Control" ref="0x40701af0" scoped=""/></to>
+        </wire>
+        <wire loc="120:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="TimerB" ref="0x4067ee60" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x406b83d8" scoped=""/></to>
+        </wire>
+        <wire loc="162:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="CompareB5" ref="0x406925f8" scoped=""/></from>
+          <to><interface-ref name="Compare" ref="0x4070c430" scoped=""/></to>
+        </wire>
+        <wire loc="128:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="CaptureB0" ref="0x406916a8" scoped=""/></from>
+          <to><interface-ref name="Capture" ref="0x406f8190" scoped=""/></to>
+        </wire>
+        <wire loc="169:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="CompareB6" ref="0x40692db8" scoped=""/></from>
+          <to><interface-ref name="Compare" ref="0x40707350" scoped=""/></to>
+        </wire>
+        <wire loc="127:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="CompareB0" ref="0x40695de8" scoped=""/></from>
+          <to><interface-ref name="Compare" ref="0x406f9a68" scoped=""/></to>
+        </wire>
+        <wire loc="168:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="ControlB6" ref="0x406952a8" scoped=""/></from>
+          <to><interface-ref name="Control" ref="0x40708870" scoped=""/></to>
+        </wire>
+        <wire loc="94:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Overflow" ref="0x406bc9f0" scoped=""/></from>
+          <to><interface-ref name="Event" ref="0x406bc688" scoped=""/>
+          <arguments>
+            <value cst="I:5">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+        <wire loc="95:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="VectorTimerX0" ref="0x406bcd48" scoped=""/></from>
+          <to><interface-ref name="VectorTimerA0" ref="0x407163e8" scoped=""/></to>
+        </wire>
+        <wire loc="96:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="VectorTimerX1" ref="0x406ba0b8" scoped=""/></from>
+          <to><interface-ref name="VectorTimerA1" ref="0x40716870" scoped=""/></to>
+        </wire>
+        <wire loc="102:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Timer" ref="0x406c8d08" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x4069d9c0" scoped=""/></to>
+        </wire>
+        <wire loc="103:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Event" ref="0x406f0970" scoped=""/></from>
+          <to><interface-ref name="Event" ref="0x406bc688" scoped=""/>
+          <arguments>
+            <value cst="I:0">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+        <wire loc="109:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Timer" ref="0x406edbe8" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x4069d9c0" scoped=""/></to>
+        </wire>
+        <wire loc="110:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Event" ref="0x406eb890" scoped=""/></from>
+          <to><interface-ref name="Event" ref="0x406bc688" scoped=""/>
+          <arguments>
+            <value cst="I:1">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+        <wire loc="116:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Timer" ref="0x406e8a28" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x4069d9c0" scoped=""/></to>
+        </wire>
+        <wire loc="117:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Event" ref="0x406e76d0" scoped=""/></from>
+          <to><interface-ref name="Event" ref="0x406bc688" scoped=""/>
+          <arguments>
+            <value cst="I:2">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+        <wire loc="121:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Overflow" ref="0x406b7410" scoped=""/></from>
+          <to><interface-ref name="Event" ref="0x406b70a8" scoped=""/>
+          <arguments>
+            <value cst="I:7">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+        <wire loc="122:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="VectorTimerX0" ref="0x406b7768" scoped=""/></from>
+          <to><interface-ref name="VectorTimerB0" ref="0x40716cf8" scoped=""/></to>
+        </wire>
+        <wire loc="123:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="VectorTimerX1" ref="0x406b7ac0" scoped=""/></from>
+          <to><interface-ref name="VectorTimerB1" ref="0x407151b0" scoped=""/></to>
+        </wire>
+        <wire loc="129:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Timer" ref="0x406f8948" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x406b83d8" scoped=""/></to>
+        </wire>
+        <wire loc="130:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Event" ref="0x406f75f0" scoped=""/></from>
+          <to><interface-ref name="Event" ref="0x406b70a8" scoped=""/>
+          <arguments>
+            <value cst="I:0">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+        <wire loc="136:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Timer" ref="0x406f47c8" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x406b83d8" scoped=""/></to>
+        </wire>
+        <wire loc="137:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Event" ref="0x406f3430" scoped=""/></from>
+          <to><interface-ref name="Event" ref="0x406b70a8" scoped=""/>
+          <arguments>
+            <value cst="I:1">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+        <wire loc="143:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Timer" ref="0x40703650" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x406b83d8" scoped=""/></to>
+        </wire>
+        <wire loc="144:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Event" ref="0x40702278" scoped=""/></from>
+          <to><interface-ref name="Event" ref="0x406b70a8" scoped=""/>
+          <arguments>
+            <value cst="I:2">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+        <wire loc="150:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Timer" ref="0x406ff510" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x406b83d8" scoped=""/></to>
+        </wire>
+        <wire loc="151:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Event" ref="0x406fe190" scoped=""/></from>
+          <to><interface-ref name="Event" ref="0x406b70a8" scoped=""/>
+          <arguments>
+            <value cst="I:3">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+        <wire loc="157:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Timer" ref="0x406fb430" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x406b83d8" scoped=""/></to>
+        </wire>
+        <wire loc="158:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Event" ref="0x4070e080" scoped=""/></from>
+          <to><interface-ref name="Event" ref="0x406b70a8" scoped=""/>
+          <arguments>
+            <value cst="I:4">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+        <wire loc="164:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Timer" ref="0x4070b350" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x406b83d8" scoped=""/></to>
+        </wire>
+        <wire loc="165:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Event" ref="0x40709010" scoped=""/></from>
+          <to><interface-ref name="Event" ref="0x406b70a8" scoped=""/>
+          <arguments>
+            <value cst="I:5">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+        <wire loc="171:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Timer" ref="0x40706270" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x406b83d8" scoped=""/></to>
+        </wire>
+        <wire loc="172:/opt/tinyos-2.1.2/tos/chips/msp430/timer/Msp430TimerC.nc">
+          <from><interface-ref name="Event" ref="0x40706e88" scoped=""/></from>
+          <to><interface-ref name="Event" ref="0x406b70a8" scoped=""/>
+          <arguments>
+            <value cst="I:6">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+      </wiring>
+    </component></referenced></component>

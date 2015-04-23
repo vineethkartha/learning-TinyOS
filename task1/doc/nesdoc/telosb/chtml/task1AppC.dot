@@ -1,0 +1,26 @@
+digraph "task1AppC" {
+  "task1C" [fontsize=12, shape=box, URL="../chtml/task1C.html"];
+  "MainC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.system.MainC.html"];
+  "task1C" [fontsize=12, shape=box, URL="../chtml/task1C.html"];
+  "LedsC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.system.LedsC.html"];
+  "task1C" [fontsize=12, shape=box, URL="../chtml/task1C.html"];
+  "task1AppC.Timer0" [fontsize=12, shape=box,peripheries=2, style=dashed, label="TimerMilliC\n(Timer0)", URL="../chtml/tos.system.TimerMilliC.html"];
+  "task1C" [fontsize=12, shape=box, URL="../chtml/task1C.html"];
+  "task1AppC.AMSenderC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="AMSenderC", URL="../chtml/tos.system.AMSenderC.html"];
+  "task1C" [fontsize=12, shape=box, URL="../chtml/task1C.html"];
+  "task1AppC.AMSenderC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="AMSenderC", URL="../chtml/tos.system.AMSenderC.html"];
+  "task1C" [fontsize=12, shape=box, URL="../chtml/task1C.html"];
+  "task1AppC.AMSenderC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="AMSenderC", URL="../chtml/tos.system.AMSenderC.html"];
+  "task1C" [fontsize=12, shape=box, URL="../chtml/task1C.html"];
+  "ActiveMessageC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/tos.platforms.telosa.ActiveMessageC.html"];
+  "task1C" [fontsize=12, shape=box, URL="../chtml/task1C.html"];
+  "task1AppC.AMReceiverC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="AMReceiverC", URL="../chtml/tos.system.AMReceiverC.html"];
+  "task1C" -> "MainC" [label="Boot", URL="../ihtml/tos.interfaces.Boot.html", fontsize=10];
+  "task1C" -> "LedsC" [label="Leds", URL="../ihtml/tos.interfaces.Leds.html", fontsize=10];
+  "task1C" -> "task1AppC.Timer0" [label="Timer<TMilli>", URL="../ihtml/tos.lib.timer.Timer.html", fontsize=10];
+  "task1C" -> "task1AppC.AMSenderC" [label="Packet", URL="../ihtml/tos.interfaces.Packet.html", fontsize=10];
+  "task1C" -> "task1AppC.AMSenderC" [label="AMPacket", URL="../ihtml/tos.interfaces.AMPacket.html", fontsize=10];
+  "task1C" -> "task1AppC.AMSenderC" [label="AMSend", URL="../ihtml/tos.interfaces.AMSend.html", fontsize=10];
+  "task1C" -> "ActiveMessageC" [label="SplitControl", URL="../ihtml/tos.interfaces.SplitControl.html", fontsize=10];
+  "task1C" -> "task1AppC.AMReceiverC" [label="Receive", URL="../ihtml/tos.interfaces.Receive.html", fontsize=10];
+}

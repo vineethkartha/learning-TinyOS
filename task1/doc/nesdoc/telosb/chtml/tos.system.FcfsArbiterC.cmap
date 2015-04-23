@@ -1,0 +1,17 @@
+<area shape="rect" id="node2" href="../chtml/tos.system.ArbiterP.html" title="ArbiterP\n(Arbiter)" alt="" coords="455,124,540,175">
+<area shape="poly" id="edge2" href="../ihtml/tos.interfaces.ResourceRequested.html" title="ResourceRequested[uint8_t]" alt="" coords="154,50 191,73 233,94 287,111 342,125 441,141 441,146 341,130 285,116 231,98 188,78 151,55">
+<area shape="rect" id="edge2" href="../ihtml/tos.interfaces.ResourceRequested.html" title="ResourceRequested[uint8_t]" alt="" coords="232,78,412,95">
+<area shape="rect" id="node7" href="../chtml/tos.system.FcfsResourceQueueC.html" title="FcfsResourceQueueC\n(Queue)" alt="" coords="584,245,773,296">
+<area shape="poly" id="edge14" href="../ihtml/tos.interfaces.ResourceQueue.html" title="ResourceQueue" alt="" coords="534,173 572,201 598,219 624,236 621,240 594,224 569,205 531,177">
+<area shape="rect" id="edge14" href="../ihtml/tos.interfaces.ResourceQueue.html" title="ResourceQueue" alt="" coords="596,203,697,221">
+<area shape="poly" id="edge12" href="../ihtml/tos.interfaces.ResourceConfigure.html" title="ResourceConfigure[uint8_t]" alt="" coords="456,163 424,179 411,190 400,204 394,218 393,233 387,232 389,216 395,201 407,187 421,175 453,158">
+<area shape="rect" id="edge12" href="../ihtml/tos.interfaces.ResourceConfigure.html" title="ResourceConfigure[uint8_t]" alt="" coords="397,203,571,221">
+<area shape="poly" id="edge4" href="../ihtml/tos.interfaces.ResourceDefaultOwner.html" title="ResourceDefaultOwner" alt="" coords="404,52 433,94 452,113 448,117 429,98 399,55">
+<area shape="rect" id="edge4" href="../ihtml/tos.interfaces.ResourceDefaultOwner.html" title="ResourceDefaultOwner" alt="" coords="431,78,576,95">
+<area shape="poly" id="edge6" href="../ihtml/tos.interfaces.Resource.html" title="Resource[uint8_t]" alt="" coords="601,54 592,76 578,98 553,121 550,117 574,94 587,74 596,52">
+<area shape="rect" id="edge6" href="../ihtml/tos.interfaces.Resource.html" title="Resource[uint8_t]" alt="" coords="587,78,700,95">
+<area shape="poly" id="edge8" href="../ihtml/tos.interfaces.ArbiterInfo.html" title="ArbiterInfo" alt="" coords="748,55 730,78 707,98 670,118 630,132 554,147 553,142 628,126 667,113 704,94 726,74 744,51">
+<area shape="rect" id="edge8" href="../ihtml/tos.interfaces.ArbiterInfo.html" title="ArbiterInfo" alt="" coords="727,78,793,95">
+<area shape="rect" id="node6" href="../chtml/tos.system.MainC.html" title="MainC" alt="" coords="691,120,773,179">
+<area shape="poly" id="edge10" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="723,180 705,222 700,234 695,232 700,220 718,178">
+<area shape="rect" id="edge10" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="709,203,729,221">

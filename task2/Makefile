@@ -1,0 +1,2 @@
+COMPONENT=task2AppC
+include $(MAKERULES)

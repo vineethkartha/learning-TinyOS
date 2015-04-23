@@ -1,0 +1,6 @@
+<area shape="rect" id="node2" href="../chtml/tos.chips.msp430.timer.HilTimerMilliC.html" title="HilTimerMilliC" alt="" coords="85,131,213,189">
+<area shape="poly" id="edge2" href="../ihtml/tos.lib.timer.Timer.html" title="Timer&lt;TMilli&gt;[uint8_t]" alt="" coords="60,59 60,83 66,105 77,120 73,123 62,108 54,83 55,59">
+<area shape="rect" id="edge2" href="../ihtml/tos.lib.timer.Timer.html" title="Timer&lt;TMilli&gt;[uint8_t]" alt="" coords="64,89,207,106">
+<area shape="rect" id="node3" href="../chtml/tos.system.MainC.html" title="MainC" alt="" coords="195,5,277,64">
+<area shape="poly" id="edge4" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="230,65 209,108 197,123 193,119 204,105 225,63">
+<area shape="rect" id="edge4" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="216,89,236,106">

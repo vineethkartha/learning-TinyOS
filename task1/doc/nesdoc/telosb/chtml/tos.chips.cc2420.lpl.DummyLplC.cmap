@@ -1,0 +1,12 @@
+<area shape="poly" id="edge2" href="../ihtml/tos.interfaces.SplitControl.html" title="SplitControl" alt="" coords="80,54 80,111 75,111 75,54">
+<area shape="rect" id="edge2" href="../ihtml/tos.interfaces.SplitControl.html" title="SplitControl" alt="" coords="77,78,152,95">
+<area shape="poly" id="edge4" href="../ihtml/tos.interfaces.Send.html" title="Send" alt="" coords="232,54 232,111 227,111 227,54">
+<area shape="rect" id="edge4" href="../ihtml/tos.interfaces.Send.html" title="Send" alt="" coords="229,78,263,95">
+<area shape="rect" id="node6" href="../chtml/tos.chips.cc2420.lpl.DummyLplP.html" title="DummyLplP" alt="" coords="347,125,461,173">
+<area shape="poly" id="edge6" href="../ihtml/tos.interfaces.LowPowerListening.html" title="LowPowerListening" alt="" coords="407,54 407,111 401,111 401,54">
+<area shape="rect" id="edge6" href="../ihtml/tos.interfaces.LowPowerListening.html" title="LowPowerListening" alt="" coords="404,78,523,95">
+<area shape="rect" id="node8" href="../chtml/tos.system.StateC.html" title="StateC" alt="" coords="563,120,645,179">
+<area shape="poly" id="edge8" href="../ihtml/tos.interfaces.State.html" title="State" alt="" coords="607,54 607,106 601,106 601,54">
+<area shape="rect" id="edge8" href="../ihtml/tos.interfaces.State.html" title="State" alt="" coords="604,78,640,95">
+<area shape="poly" id="edge10" href="../ihtml/tos.interfaces.Receive.html" title="Receive" alt="" coords="748,54 748,111 743,111 743,54">
+<area shape="rect" id="edge10" href="../ihtml/tos.interfaces.Receive.html" title="Receive" alt="" coords="745,78,795,95">

@@ -1,0 +1,6 @@
+<area shape="rect" id="node2" href="../chtml/tos.chips.msp430.timer.Msp430CounterC.html" title="Msp430CounterC\n(Counter)" alt="" coords="48,120,205,171">
+<area shape="poly" id="edge2" href="../ihtml/tos.lib.timer.Counter.html" title="Counter&lt;TMicro, uint16_t&gt;" alt="" coords="129,53 129,106 124,106 124,53">
+<area shape="rect" id="edge2" href="../ihtml/tos.lib.timer.Counter.html" title="Counter&lt;TMicro, uint16_t&gt;" alt="" coords="127,78,301,95">
+<area shape="rect" id="node3" href="../chtml/tos.chips.msp430.timer.Msp430TimerC.html" title="Msp430TimerC" alt="" coords="53,237,200,296">
+<area shape="poly" id="edge4" href="../ihtml/tos.chips.msp430.timer.Msp430Timer.html" title="Msp430Timer" alt="" coords="129,171 129,224 124,224 124,171">
+<area shape="rect" id="edge4" href="../ihtml/tos.chips.msp430.timer.Msp430Timer.html" title="Msp430Timer" alt="" coords="127,195,213,213">

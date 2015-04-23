@@ -1,0 +1,57 @@
+<?xml version="1.0" ?><component abstract="" loc="42:/opt/tinyos-2.1.2/tos/chips/msp430/pins/Msp430GpioC.nc" nicename="tos.chips.msp430.pins.Msp430GpioC" qname="Msp430GpioC" safe="">
+      <documentation loc="33:/opt/tinyos-2.1.2/tos/chips/msp430/pins/Msp430GpioC.nc">
+        <short>
+ Implementation of the general-purpose I/O abstraction
+ for the TI MSP430 microcontroller.</short>
+        <long>
+ Implementation of the general-purpose I/O abstraction
+ for the TI MSP430 microcontroller.
+
+ @author Joe Polastre
+ @see  Please refer to TEP 117 for more information about this component and its
+          intended use.
+</long>
+      </documentation>
+      <parameters>
+      </parameters>
+      <module/>
+    <specification><interface loc="44:/opt/tinyos-2.1.2/tos/chips/msp430/pins/Msp430GpioC.nc" name="HplGeneralIO" provided="0" ref="0x408842c8">
+      <component-ref nicename="tos.chips.msp430.pins.Msp430GpioC" qname="Msp430GpioC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="HplGeneralIO" ref="0x408842c8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.msp430.pins.HplMsp430GeneralIO" qname="HplMsp430GeneralIO"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="makeInput" ref="0x408844a0" scoped=""/>
+        <function-ref name="isInput" ref="0x40884580" scoped=""/>
+        <function-ref name="setResistor" ref="0x40884660" scoped=""/>
+        <function-ref name="toggle" ref="0x40884740" scoped=""/>
+        <function-ref name="isOutput" ref="0x40884820" scoped=""/>
+        <function-ref name="getResistor" ref="0x40884900" scoped=""/>
+        <function-ref name="makeOutput" ref="0x408849e0" scoped=""/>
+        <function-ref name="get" ref="0x40884ac0" scoped=""/>
+        <function-ref name="selectIOFunc" ref="0x40884ba0" scoped=""/>
+        <function-ref name="getRaw" ref="0x40884c80" scoped=""/>
+        <function-ref name="set" ref="0x40884d60" scoped=""/>
+        <function-ref name="selectModuleFunc" ref="0x40884e40" scoped=""/>
+        <function-ref name="isIOFunc" ref="0x40884f20" scoped=""/>
+        <function-ref name="isModuleFunc" ref="0x40883098" scoped=""/>
+        <function-ref name="clr" ref="0x40883178" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="43:/opt/tinyos-2.1.2/tos/chips/msp430/pins/Msp430GpioC.nc" name="GeneralIO" provided="1" ref="0x408687e8">
+      <component-ref nicename="tos.chips.msp430.pins.Msp430GpioC" qname="Msp430GpioC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="GeneralIO" ref="0x408687e8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.GeneralIO" qname="GeneralIO"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="makeInput" ref="0x408689c0" scoped=""/>
+        <function-ref name="isInput" ref="0x40868aa0" scoped=""/>
+        <function-ref name="toggle" ref="0x40868b80" scoped=""/>
+        <function-ref name="isOutput" ref="0x40868c60" scoped=""/>
+        <function-ref name="get" ref="0x40868d40" scoped=""/>
+        <function-ref name="makeOutput" ref="0x40868e20" scoped=""/>
+        <function-ref name="set" ref="0x40868f00" scoped=""/>
+        <function-ref name="clr" ref="0x40884010" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

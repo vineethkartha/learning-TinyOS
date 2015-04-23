@@ -1,0 +1,11 @@
+<area shape="rect" id="node2" href="../chtml/tos.system.RealMainP.html" title="RealMainP" alt="" coords="184,120,283,168">
+<area shape="poly" id="edge2" href="../ihtml/tos.interfaces.Boot.html" title="Boot" alt="" coords="236,54 236,106 231,106 231,54">
+<area shape="rect" id="edge2" href="../ihtml/tos.interfaces.Boot.html" title="Boot" alt="" coords="233,78,264,95">
+<area shape="rect" id="node3" href="../chtml/tos.system.TinySchedulerC.html" title="TinySchedulerC" alt="" coords="5,235,155,293">
+<area shape="poly" id="edge4" href="../ihtml/tos.interfaces.Scheduler.html" title="Scheduler" alt="" coords="198,170 164,194 124,227 121,223 161,190 195,166">
+<area shape="rect" id="edge4" href="../ihtml/tos.interfaces.Scheduler.html" title="Scheduler" alt="" coords="163,193,228,210">
+<area shape="rect" id="node4" href="../chtml/tos.platforms.telosa.PlatformC.html" title="PlatformC" alt="" coords="179,235,288,293">
+<area shape="poly" id="edge6" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="236,168 236,221 231,221 231,168">
+<area shape="rect" id="edge6" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="233,193,253,210">
+<area shape="poly" id="edge8" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="266,166 349,231 346,236 263,170">
+<area shape="rect" id="edge8" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="313,193,333,210">

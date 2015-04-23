@@ -1,0 +1,214 @@
+<?xml version="1.0" ?><component loc="37:/opt/tinyos-2.1.2/tos/chips/cc2420/csma/CC2420CsmaP.nc" nicename="tos.chips.cc2420.csma.CC2420CsmaP" qname="CC2420CsmaP" safe="">
+      <documentation loc="32:/opt/tinyos-2.1.2/tos/chips/cc2420/csma/CC2420CsmaP.nc">
+        <short>
+ </short>
+        <long>
+ @author Jonathan Hui &lt;jhui@archrock.com&gt;
+ @version $Revision: 1.12 $ $Date: 2009/09/17 23:36:36 $
+</long>
+      </documentation>
+      <module/>
+    <specification><interface loc="39:/opt/tinyos-2.1.2/tos/chips/cc2420/csma/CC2420CsmaP.nc" name="SplitControl" provided="1" ref="0x40a320e0">
+      <component-ref nicename="tos.chips.cc2420.csma.CC2420CsmaP" qname="CC2420CsmaP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SplitControl" ref="0x40a320e0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.SplitControl" qname="SplitControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="startDone" ref="0x40a322b8" scoped=""/>
+        <function-ref name="stopDone" ref="0x40a32398" scoped=""/>
+        <function-ref name="start" ref="0x40a32478" scoped=""/>
+        <function-ref name="stop" ref="0x40a32558" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="41:/opt/tinyos-2.1.2/tos/chips/cc2420/csma/CC2420CsmaP.nc" name="RadioBackoff" provided="1" ref="0x40a32e20">
+      <component-ref nicename="tos.chips.cc2420.csma.CC2420CsmaP" qname="CC2420CsmaP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="RadioBackoff" ref="0x40a32e20" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.cc2420.interfaces.RadioBackoff" qname="RadioBackoff"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="requestCca" ref="0x40a31010" scoped=""/>
+        <function-ref name="requestInitialBackoff" ref="0x40a310f0" scoped=""/>
+        <function-ref name="setCongestionBackoff" ref="0x40a311d0" scoped=""/>
+        <function-ref name="setInitialBackoff" ref="0x40a312b0" scoped=""/>
+        <function-ref name="setCca" ref="0x40a31390" scoped=""/>
+        <function-ref name="requestCongestionBackoff" ref="0x40a31470" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="47:/opt/tinyos-2.1.2/tos/chips/cc2420/csma/CC2420CsmaP.nc" name="SubBackoff" provided="0" ref="0x40a2f030">
+      <component-ref nicename="tos.chips.cc2420.csma.CC2420CsmaP" qname="CC2420CsmaP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SubBackoff" ref="0x40a2f030" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.cc2420.interfaces.RadioBackoff" qname="RadioBackoff"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="requestCca" ref="0x40a2f208" scoped=""/>
+        <function-ref name="requestInitialBackoff" ref="0x40a2f2e8" scoped=""/>
+        <function-ref name="setCongestionBackoff" ref="0x40a2f3c8" scoped=""/>
+        <function-ref name="setInitialBackoff" ref="0x40a2f4a8" scoped=""/>
+        <function-ref name="setCca" ref="0x40a2f588" scoped=""/>
+        <function-ref name="requestCongestionBackoff" ref="0x40a2f668" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="50:/opt/tinyos-2.1.2/tos/chips/cc2420/csma/CC2420CsmaP.nc" name="CC2420Packet" provided="0" ref="0x40a2a650">
+      <component-ref nicename="tos.chips.cc2420.csma.CC2420CsmaP" qname="CC2420CsmaP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="CC2420Packet" ref="0x40a2a650" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.cc2420.interfaces.CC2420Packet" qname="CC2420Packet"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="setPower" ref="0x40a2a828" scoped=""/>
+        <function-ref name="setNetwork" ref="0x40a2a908" scoped=""/>
+        <function-ref name="getRssi" ref="0x40a2a9e8" scoped=""/>
+        <function-ref name="getNetwork" ref="0x40a2aac8" scoped=""/>
+        <function-ref name="getPower" ref="0x40a2aba8" scoped=""/>
+        <function-ref name="getLqi" ref="0x40a2ac88" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="46:/opt/tinyos-2.1.2/tos/chips/cc2420/csma/CC2420CsmaP.nc" name="CC2420Transmit" provided="0" ref="0x40a47858">
+      <component-ref nicename="tos.chips.cc2420.csma.CC2420CsmaP" qname="CC2420CsmaP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="CC2420Transmit" ref="0x40a47858" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.cc2420.interfaces.CC2420Transmit" qname="CC2420Transmit"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x40a47a30" scoped=""/>
+        <function-ref name="cancel" ref="0x40a47b10" scoped=""/>
+        <function-ref name="modify" ref="0x40a47bf0" scoped=""/>
+        <function-ref name="sendDone" ref="0x40a47cd0" scoped=""/>
+        <function-ref name="resend" ref="0x40a47db0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="40:/opt/tinyos-2.1.2/tos/chips/cc2420/csma/CC2420CsmaP.nc" name="Send" provided="1" ref="0x40a326e8">
+      <component-ref nicename="tos.chips.cc2420.csma.CC2420CsmaP" qname="CC2420CsmaP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Send" ref="0x40a326e8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Send" qname="Send"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x40a328c0" scoped=""/>
+        <function-ref name="getPayload" ref="0x40a329a0" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x40a32a80" scoped=""/>
+        <function-ref name="cancel" ref="0x40a32b60" scoped=""/>
+        <function-ref name="sendDone" ref="0x40a32c40" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="48:/opt/tinyos-2.1.2/tos/chips/cc2420/csma/CC2420CsmaP.nc" name="Random" provided="0" ref="0x40a444c8">
+      <component-ref nicename="tos.chips.cc2420.csma.CC2420CsmaP" qname="CC2420CsmaP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Random" ref="0x40a444c8" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Random" qname="Random"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="rand16" ref="0x40a446a0" scoped=""/>
+        <function-ref name="rand32" ref="0x40a44780" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="45:/opt/tinyos-2.1.2/tos/chips/cc2420/csma/CC2420CsmaP.nc" name="SubControl" provided="0" ref="0x40a29230">
+      <component-ref nicename="tos.chips.cc2420.csma.CC2420CsmaP" qname="CC2420CsmaP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SubControl" ref="0x40a29230" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.StdControl" qname="StdControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="start" ref="0x40a29408" scoped=""/>
+        <function-ref name="stop" ref="0x40a294e8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="51:/opt/tinyos-2.1.2/tos/chips/cc2420/csma/CC2420CsmaP.nc" name="CC2420PacketBody" provided="0" ref="0x40a41e08">
+      <component-ref nicename="tos.chips.cc2420.csma.CC2420CsmaP" qname="CC2420CsmaP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="CC2420PacketBody" ref="0x40a41e08" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.cc2420.interfaces.CC2420PacketBody" qname="CC2420PacketBody"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getPayload" ref="0x40a45010" scoped=""/>
+        <function-ref name="getHeader" ref="0x40a450f0" scoped=""/>
+        <function-ref name="getMetadata" ref="0x40a451d0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="44:/opt/tinyos-2.1.2/tos/chips/cc2420/csma/CC2420CsmaP.nc" name="CC2420Power" provided="0" ref="0x40a2b7e0">
+      <component-ref nicename="tos.chips.cc2420.csma.CC2420CsmaP" qname="CC2420CsmaP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="CC2420Power" ref="0x40a2b7e0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.chips.cc2420.interfaces.CC2420Power" qname="CC2420Power"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="startOscillator" ref="0x40a2b9b8" scoped=""/>
+        <function-ref name="rfOff" ref="0x40a2ba98" scoped=""/>
+        <function-ref name="rxOn" ref="0x40a2bb78" scoped=""/>
+        <function-ref name="startVReg" ref="0x40a2bc58" scoped=""/>
+        <function-ref name="stopVReg" ref="0x40a2bd38" scoped=""/>
+        <function-ref name="startOscillatorDone" ref="0x40a2be18" scoped=""/>
+        <function-ref name="stopOscillator" ref="0x40a2bef8" scoped=""/>
+        <function-ref name="startVRegDone" ref="0x40a30010" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="49:/opt/tinyos-2.1.2/tos/chips/cc2420/csma/CC2420CsmaP.nc" name="Leds" provided="0" ref="0x40a44910">
+      <component-ref nicename="tos.chips.cc2420.csma.CC2420CsmaP" qname="CC2420CsmaP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Leds" ref="0x40a44910" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Leds" qname="Leds"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="led0Off" ref="0x40a44ae8" scoped=""/>
+        <function-ref name="led0Toggle" ref="0x40a44bc8" scoped=""/>
+        <function-ref name="led1On" ref="0x40a44ca8" scoped=""/>
+        <function-ref name="led1Toggle" ref="0x40a44d88" scoped=""/>
+        <function-ref name="led2Toggle" ref="0x40a44e68" scoped=""/>
+        <function-ref name="get" ref="0x40a2a010" scoped=""/>
+        <function-ref name="led1Off" ref="0x40a2a0f0" scoped=""/>
+        <function-ref name="led2Off" ref="0x40a2a470" scoped=""/>
+        <function-ref name="set" ref="0x40a2a1d0" scoped=""/>
+        <function-ref name="led0On" ref="0x40a2a2b0" scoped=""/>
+        <function-ref name="led2On" ref="0x40a2a390" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="43:/opt/tinyos-2.1.2/tos/chips/cc2420/csma/CC2420CsmaP.nc" name="Resource" provided="0" ref="0x40a31628">
+      <component-ref nicename="tos.chips.cc2420.csma.CC2420CsmaP" qname="CC2420CsmaP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Resource" ref="0x40a31628" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Resource" qname="Resource"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="release" ref="0x40a31800" scoped=""/>
+        <function-ref name="immediateRequest" ref="0x40a318e0" scoped=""/>
+        <function-ref name="request" ref="0x40a319c0" scoped=""/>
+        <function-ref name="granted" ref="0x40a31aa0" scoped=""/>
+        <function-ref name="isOwner" ref="0x40a31b80" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="52:/opt/tinyos-2.1.2/tos/chips/cc2420/csma/CC2420CsmaP.nc" name="SplitControlState" provided="0" ref="0x40a3d6e0">
+      <component-ref nicename="tos.chips.cc2420.csma.CC2420CsmaP" qname="CC2420CsmaP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SplitControlState" ref="0x40a3d6e0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.State" qname="State"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getState" ref="0x40a3d938" scoped=""/>
+        <function-ref name="toIdle" ref="0x40a3da18" scoped=""/>
+        <function-ref name="isState" ref="0x40a3daf8" scoped=""/>
+        <function-ref name="isIdle" ref="0x40a3dbd8" scoped=""/>
+        <function-ref name="requestState" ref="0x40a3dcb8" scoped=""/>
+        <function-ref name="forceState" ref="0x40a3dd98" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="76:/opt/tinyos-2.1.2/tos/chips/cc2420/csma/CC2420CsmaP.nc" name="sendDone_task" provided="0" ref="0x40a3b820">
+      <component-ref nicename="tos.chips.cc2420.csma.CC2420CsmaP" qname="CC2420CsmaP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="sendDone_task" ref="0x40a3b820" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.TaskBasic" qname="TaskBasic"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="postTask" ref="0x40a3b9f8" scoped=""/>
+        <function-ref name="runTask" ref="0x40a3bad8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="75:/opt/tinyos-2.1.2/tos/chips/cc2420/csma/CC2420CsmaP.nc" name="stopDone_task" provided="0" ref="0x40a3b010">
+      <component-ref nicename="tos.chips.cc2420.csma.CC2420CsmaP" qname="CC2420CsmaP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="stopDone_task" ref="0x40a3b010" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.TaskBasic" qname="TaskBasic"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="postTask" ref="0x40a3b1e8" scoped=""/>
+        <function-ref name="runTask" ref="0x40a3b2c8" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="74:/opt/tinyos-2.1.2/tos/chips/cc2420/csma/CC2420CsmaP.nc" name="startDone_task" provided="0" ref="0x40a3c7b0">
+      <component-ref nicename="tos.chips.cc2420.csma.CC2420CsmaP" qname="CC2420CsmaP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="startDone_task" ref="0x40a3c7b0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.TaskBasic" qname="TaskBasic"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="postTask" ref="0x40a3c988" scoped=""/>
+        <function-ref name="runTask" ref="0x40a3ca68" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

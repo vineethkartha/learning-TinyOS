@@ -1,0 +1,121 @@
+<?xml version="1.0" ?><component loc="12:task1C.nc" nicename="task1C" qname="task1C">
+      <module/>
+    <specification><interface loc="16:task1C.nc" name="Timer0" provided="0" ref="0x4089b270">
+      <component-ref nicename="task1C" qname="task1C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Timer0" ref="0x4089b270" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.lib.timer.Timer" qname="Timer"/>
+        <arguments>
+          <type-tag alignment="I:2" size="I:2"><struct-ref ref="0x400339f0"/>
+            <typename><typedef-ref name="TMilli" ref="0x40033bb8"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="getNow" ref="0x40888d58" scoped=""/>
+        <function-ref name="fired" ref="0x40888010" scoped=""/>
+        <function-ref name="startPeriodicAt" ref="0x40888718" scoped=""/>
+        <function-ref name="isOneShot" ref="0x408884c0" scoped=""/>
+        <function-ref name="getdt" ref="0x40887268" scoped=""/>
+        <function-ref name="gett0" ref="0x40887010" scoped=""/>
+        <function-ref name="isRunning" ref="0x40888268" scoped=""/>
+        <function-ref name="startPeriodic" ref="0x4089b898" scoped=""/>
+        <function-ref name="startOneShotAt" ref="0x40888a38" scoped=""/>
+        <function-ref name="startOneShot" ref="0x4089bb18" scoped=""/>
+        <function-ref name="stop" ref="0x4089bd98" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="20:task1C.nc" name="AMControl" provided="0" ref="0x408dca10">
+      <component-ref nicename="task1C" qname="task1C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="AMControl" ref="0x408dca10" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.SplitControl" qname="SplitControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="startDone" ref="0x408dcbe8" scoped=""/>
+        <function-ref name="stopDone" ref="0x408dccc8" scoped=""/>
+        <function-ref name="start" ref="0x408dcda8" scoped=""/>
+        <function-ref name="stop" ref="0x408dce88" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="14:task1C.nc" name="Boot" provided="0" ref="0x4088b748">
+      <component-ref nicename="task1C" qname="task1C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Boot" ref="0x4088b748" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Boot" qname="Boot"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="booted" ref="0x4088b920" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="17:task1C.nc" name="Packet" provided="0" ref="0x408d2328">
+      <component-ref nicename="task1C" qname="task1C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Packet" ref="0x408d2328" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Packet" qname="Packet"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x408d2500" scoped=""/>
+        <function-ref name="payloadLength" ref="0x408d25e0" scoped=""/>
+        <function-ref name="getPayload" ref="0x408d26c0" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x408d27a0" scoped=""/>
+        <function-ref name="setPayloadLength" ref="0x408d2880" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="19:task1C.nc" name="AMSend" provided="0" ref="0x408dfe38">
+      <component-ref nicename="task1C" qname="task1C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="AMSend" ref="0x408dfe38" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.AMSend" qname="AMSend"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x4089a050" scoped=""/>
+        <function-ref name="getPayload" ref="0x4089a130" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x4089a210" scoped=""/>
+        <function-ref name="cancel" ref="0x4089a2f0" scoped=""/>
+        <function-ref name="sendDone" ref="0x4089a3d0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="21:task1C.nc" name="Receive" provided="0" ref="0x408f4d50">
+      <component-ref nicename="task1C" qname="task1C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Receive" ref="0x408f4d50" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Receive" qname="Receive"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="receive" ref="0x408f4f28" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="15:task1C.nc" name="Leds" provided="0" ref="0x4088bab0">
+      <component-ref nicename="task1C" qname="task1C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Leds" ref="0x4088bab0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.Leds" qname="Leds"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="led0Off" ref="0x4088bc88" scoped=""/>
+        <function-ref name="led0Toggle" ref="0x4088bd68" scoped=""/>
+        <function-ref name="led1On" ref="0x4088be48" scoped=""/>
+        <function-ref name="led1Toggle" ref="0x4088bf28" scoped=""/>
+        <function-ref name="led2Toggle" ref="0x4088a018" scoped=""/>
+        <function-ref name="get" ref="0x4088a0f8" scoped=""/>
+        <function-ref name="led1Off" ref="0x4088a1d8" scoped=""/>
+        <function-ref name="led2Off" ref="0x4088a558" scoped=""/>
+        <function-ref name="set" ref="0x4088a2b8" scoped=""/>
+        <function-ref name="led0On" ref="0x4088a398" scoped=""/>
+        <function-ref name="led2On" ref="0x4088a478" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="18:task1C.nc" name="AMPacket" provided="0" ref="0x408e4140">
+      <component-ref nicename="task1C" qname="task1C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="AMPacket" ref="0x408e4140" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="tos.interfaces.AMPacket" qname="AMPacket"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="group" ref="0x408e4318" scoped=""/>
+        <function-ref name="source" ref="0x408e43f8" scoped=""/>
+        <function-ref name="address" ref="0x408e44d8" scoped=""/>
+        <function-ref name="destination" ref="0x408e45b8" scoped=""/>
+        <function-ref name="setSource" ref="0x408e4698" scoped=""/>
+        <function-ref name="setDestination" ref="0x408e4778" scoped=""/>
+        <function-ref name="type" ref="0x408e4858" scoped=""/>
+        <function-ref name="setType" ref="0x408e4938" scoped=""/>
+        <function-ref name="isForMe" ref="0x408e4a18" scoped=""/>
+        <function-ref name="setGroup" ref="0x408e4af8" scoped=""/>
+        <function-ref name="localGroup" ref="0x408e4bd8" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

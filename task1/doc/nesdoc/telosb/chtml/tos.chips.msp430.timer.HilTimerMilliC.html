@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Component: tos.chips.msp430.timer.HilTimerMilliC</title>
+  </head>
+  <body>
+    <h2>Component: tos.chips.msp430.timer.HilTimerMilliC
+    </h2>
+    <b>configuration HilTimerMilliC</b>
+    <p>
+ HilTimerMilliC provides a parameterized interface to a virtualized
+ millisecond timer.  TimerMilliC in tos/system/ uses this component to
+ allocate new timers.
+
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        Cory Sharp &lt;cssharp@eecs.berkeley.edu&gt;
+ 
+      </dd>
+      <dt><b>See:</b>
+      <dd>
+         Please refer to TEP 102 for more information about this component and its
+          intended use.
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Provides</div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.Init.html">Init</a></div><div id=funcsig>interface <a href="../ihtml/tos.lib.timer.LocalTime.html">LocalTime</a>&lt;TMilli&gt;</div><div id=funcsig>interface <a href="../ihtml/tos.lib.timer.Timer.html">Timer</a>&lt;TMilli&gt; as <b>TimerMilli</b>[uint8_t]</div><p><div id=heading>Wiring</div><p>
+    <map name="comp">
+      <area shape="rect" id="node2" href="../chtml/tos.lib.timer.VirtualizeTimerC.html" title="VirtualizeTimerC" alt="" coords="5,120,149,168">
+
+      <area shape="poly" id="edge2" href="../ihtml/tos.lib.timer.Timer.html" title="Timer&lt;TMilli&gt;[uint8_t]" alt="" coords="80,54 80,106 75,106 75,54">
+
+      <area shape="rect" id="edge2" href="../ihtml/tos.lib.timer.Timer.html" title="Timer&lt;TMilli&gt;[uint8_t]" alt="" coords="77,78,220,95">
+
+      <area shape="rect" id="node7" href="../chtml/tos.lib.timer.AlarmToTimerC.html" title="AlarmToTimerC" alt="" coords="9,240,145,288">
+
+      <area shape="poly" id="edge8" href="../ihtml/tos.lib.timer.Timer.html" title="Timer&lt;TMilli&gt;" alt="" coords="80,168 80,226 75,226 75,168">
+
+      <area shape="rect" id="edge8" href="../ihtml/tos.lib.timer.Timer.html" title="Timer&lt;TMilli&gt;" alt="" coords="77,193,165,210">
+
+      <area shape="rect" id="node4" href="../chtml/tos.lib.timer.CounterToLocalTimeC.html" title="CounterToLocalTimeC" alt="" coords="301,120,488,168">
+
+      <area shape="poly" id="edge4" href="../ihtml/tos.lib.timer.LocalTime.html" title="LocalTime&lt;TMilli&gt;" alt="" coords="397,54 397,106 392,106 392,54">
+
+      <area shape="rect" id="edge4" href="../ihtml/tos.lib.timer.LocalTime.html" title="LocalTime&lt;TMilli&gt;" alt="" coords="395,78,511,95">
+
+      <area shape="rect" id="node8" href="../chtml/tos.chips.msp430.timer.CounterMilli32C.html" title="CounterMilli32C" alt="" coords="319,235,471,293">
+
+      <area shape="poly" id="edge12" href="../ihtml/tos.lib.timer.Counter.html" title="Counter&lt;TMilli, uint32_t&gt;" alt="" coords="397,168 397,221 392,221 392,168">
+
+      <area shape="rect" id="edge12" href="../ihtml/tos.lib.timer.Counter.html" title="Counter&lt;TMilli, uint32_t&gt;" alt="" coords="395,193,559,210">
+
+      <area shape="rect" id="node6" href="../chtml/tos.chips.msp430.timer.AlarmMilli32C.html" title="AlarmMilli32C" alt="" coords="101,360,235,419">
+
+      <area shape="poly" id="edge6" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="254,289 245,313 232,338 220,352 215,348 227,334 240,311 249,287">
+
+      <area shape="rect" id="edge6" href="../ihtml/tos.interfaces.Init.html" title="Init" alt="" coords="241,318,261,335">
+
+      <area shape="poly" id="edge10" href="../ihtml/tos.lib.timer.Alarm.html" title="Alarm&lt;TMilli, uint32_t&gt;" alt="" coords="72,289 70,312 76,335 92,354 88,357 71,337 64,313 67,288">
+
+      <area shape="rect" id="edge10" href="../ihtml/tos.lib.timer.Alarm.html" title="Alarm&lt;TMilli, uint32_t&gt;" alt="" coords="73,318,224,335">
+
+    </map>
+    <img src="tos.chips.msp430.timer.HilTimerMilliC.png" usemap="#comp" id=imgwiring>
+  </body>
+</html>

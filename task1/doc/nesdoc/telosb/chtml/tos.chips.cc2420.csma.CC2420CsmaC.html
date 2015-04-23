@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Component: tos.chips.cc2420.csma.CC2420CsmaC</title>
+  </head>
+  <body>
+    <h2>Component: tos.chips.cc2420.csma.CC2420CsmaC
+    </h2>
+    <b>configuration CC2420CsmaC</b>
+    <p>
+ Basic implementation of a CSMA MAC for the ChipCon CC2420 radio.
+
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        Jonathan Hui &lt;jhui@archrock.com&gt;
+ 
+      </dd>
+      <dt><b>Version:</b>
+      <dd>
+        $Revision: 1.2 $ $Date: 2008-05-14 21:33:07 $
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Provides</div><div id=funcsig>interface <a href="../ihtml/tos.chips.cc2420.interfaces.RadioBackoff.html">RadioBackoff</a></div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.Receive.html">Receive</a></div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.Send.html">Send</a></div><div id=funcsig>interface <a href="../ihtml/tos.interfaces.SplitControl.html">SplitControl</a></div><p><div id=heading>Wiring</div><p>
+    <map name="comp">
+      <area shape="rect" id="node2" href="../chtml/tos.chips.cc2420.csma.CC2420CsmaP.html" title="CC2420CsmaP" alt="" coords="527,120,665,168">
+
+      <area shape="poly" id="edge2" href="../ihtml/tos.interfaces.SplitControl.html" title="SplitControl" alt="" coords="452,49 517,94 544,110 541,115 515,98 449,53">
+
+      <area shape="rect" id="edge2" href="../ihtml/tos.interfaces.SplitControl.html" title="SplitControl" alt="" coords="517,78,592,95">
+
+      <area shape="rect" id="node6" href="../chtml/tos.chips.cc2420.receive.CC2420ReceiveC.html" title="CC2420ReceiveC" alt="" coords="1136,235,1299,293">
+
+      <area shape="poly" id="edge14" href="../ihtml/tos.interfaces.StdControl.html" title="StdControl" alt="" coords="666,144 831,157 929,170 1026,189 1084,206 1139,227 1137,232 1082,211 1025,195 928,176 831,162 665,149">
+
+      <area shape="rect" id="edge14" href="../ihtml/tos.interfaces.StdControl.html" title="StdControl" alt="" coords="1084,193,1152,210">
+
+      <area shape="rect" id="node7" href="../chtml/tos.chips.cc2420.control.CC2420ControlC.html" title="CC2420ControlC" alt="" coords="5,235,168,293">
+
+      <area shape="poly" id="edge10" href="../ihtml/tos.interfaces.Resource.html" title="Resource" alt="" coords="527,148 396,151 244,159 112,173 68,183 45,194 40,207 46,223 41,225 34,207 41,190 66,178 112,168 243,154 396,146 526,142">
+
+      <area shape="rect" id="edge10" href="../ihtml/tos.interfaces.Resource.html" title="Resource" alt="" coords="43,193,101,210">
+
+      <area shape="poly" id="edge12" href="../ihtml/tos.chips.cc2420.interfaces.CC2420Power.html" title="CC2420Power" alt="" coords="526,148 431,152 323,161 223,174 183,183 153,194 133,208 116,226 112,222 130,204 151,190 181,178 222,169 322,155 431,147 526,143">
+
+      <area shape="rect" id="edge12" href="../ihtml/tos.chips.cc2420.interfaces.CC2420Power.html" title="CC2420Power" alt="" coords="152,193,240,210">
+
+      <area shape="rect" id="node8" href="../chtml/tos.chips.cc2420.transmit.CC2420TransmitC.html" title="CC2420TransmitC" alt="" coords="263,235,433,293">
+
+      <area shape="poly" id="edge16" href="../ihtml/tos.interfaces.StdControl.html" title="StdControl" alt="" coords="527,151 360,168 288,180 265,187 253,194 248,202 248,210 260,225 256,228 243,211 243,201 249,190 263,182 287,175 359,163 526,146">
+
+      <area shape="rect" id="edge16" href="../ihtml/tos.interfaces.StdControl.html" title="StdControl" alt="" coords="251,193,319,210">
+
+      <area shape="poly" id="edge18" href="../ihtml/tos.chips.cc2420.interfaces.CC2420Transmit.html" title="CC2420Transmit" alt="" coords="527,151 422,165 378,177 362,185 351,194 345,206 342,221 337,220 340,205 347,190 359,180 376,172 421,159 526,145">
+
+      <area shape="rect" id="edge18" href="../ihtml/tos.chips.cc2420.interfaces.CC2420Transmit.html" title="CC2420Transmit" alt="" coords="349,193,455,210">
+
+      <area shape="poly" id="edge20" href="../ihtml/tos.chips.cc2420.interfaces.RadioBackoff.html" title="RadioBackoff" alt="" coords="547,171 422,231 420,226 545,166">
+
+      <area shape="rect" id="edge20" href="../ihtml/tos.chips.cc2420.interfaces.RadioBackoff.html" title="RadioBackoff" alt="" coords="495,193,576,210">
+
+      <area shape="rect" id="node9" href="../chtml/tos.chips.cc2420.packet.CC2420PacketC.html" title="CC2420PacketC" alt="" coords="563,235,717,293">
+
+      <area shape="poly" id="edge22" href="../ihtml/tos.chips.cc2420.interfaces.CC2420Packet.html" title="CC2420Packet" alt="" coords="595,168 596,189 600,210 606,222 601,225 595,212 590,189 590,168">
+
+      <area shape="rect" id="edge22" href="../ihtml/tos.chips.cc2420.interfaces.CC2420Packet.html" title="CC2420Packet" alt="" coords="597,193,689,210">
+
+      <area shape="poly" id="edge24" href="../ihtml/tos.chips.cc2420.interfaces.CC2420PacketBody.html" title="CC2420PacketBody" alt="" coords="667,166 680,177 692,191 695,208 689,225 684,223 690,208 687,193 677,181 663,170">
+
+      <area shape="rect" id="edge24" href="../ihtml/tos.chips.cc2420.interfaces.CC2420PacketBody.html" title="CC2420PacketBody" alt="" coords="692,193,816,210">
+
+      <area shape="rect" id="node10" href="../chtml/tos.system.RandomC.html" title="RandomC" alt="" coords="785,235,892,293">
+
+      <area shape="poly" id="edge26" href="../ihtml/tos.interfaces.Random.html" title="Random" alt="" coords="666,148 757,163 797,175 823,190 833,204 839,220 834,222 828,207 820,194 795,180 756,169 665,153">
+
+      <area shape="rect" id="edge26" href="../ihtml/tos.interfaces.Random.html" title="Random" alt="" coords="832,193,885,210">
+
+      <area shape="rect" id="node11" href="../chtml/tos.system.StateC.html" title="StateC" alt="" coords="916,235,999,293">
+
+      <area shape="poly" id="edge28" href="../ihtml/tos.interfaces.State.html" title="State" alt="" coords="666,147 792,164 851,175 892,190 913,204 931,222 927,226 910,208 889,194 849,180 791,169 665,153">
+
+      <area shape="rect" id="edge28" href="../ihtml/tos.interfaces.State.html" title="State" alt="" coords="913,193,949,210">
+
+      <area shape="rect" id="node12" href="../chtml/tos.system.LedsC.html" title="LedsC" alt="" coords="1023,235,1105,293">
+
+      <area shape="poly" id="edge30" href="../ihtml/tos.interfaces.Leds.html" title="Leds" alt="" coords="666,147 824,164 901,176 956,189 989,205 1019,224 1016,229 986,210 954,195 900,181 824,169 665,152">
+
+      <area shape="rect" id="edge30" href="../ihtml/tos.interfaces.Leds.html" title="Leds" alt="" coords="989,193,1020,210">
+
+      <area shape="poly" id="edge4" href="../ihtml/tos.chips.cc2420.interfaces.RadioBackoff.html" title="RadioBackoff" alt="" coords="599,54 599,106 593,106 593,54">
+
+      <area shape="rect" id="edge4" href="../ihtml/tos.chips.cc2420.interfaces.RadioBackoff.html" title="RadioBackoff" alt="" coords="596,78,677,95">
+
+      <area shape="poly" id="edge6" href="../ihtml/tos.interfaces.Send.html" title="Send" alt="" coords="726,53 707,76 684,98 660,115 657,111 681,94 703,72 722,50">
+
+      <area shape="rect" id="edge6" href="../ihtml/tos.interfaces.Send.html" title="Send" alt="" coords="701,78,735,95">
+
+      <area shape="poly" id="edge8" href="../ihtml/tos.interfaces.Receive.html" title="Receive" alt="" coords="1223,168 1221,221 1216,221 1218,168">
+
+      <area shape="rect" id="edge8" href="../ihtml/tos.interfaces.Receive.html" title="Receive" alt="" coords="1219,193,1268,210">
+
+    </map>
+    <img src="tos.chips.cc2420.csma.CC2420CsmaC.png" usemap="#comp" id=imgwiring>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+#include<Timer.h>
+#include"printf.h"
+#define TX 3
+#define RX 4
+
+typedef nx_struct message
+{
+nx_uint16_t nodeid;
+nx_uint16_t counter;
+} message;
+
+
+module task1C
+{
+uses interface Boot;
+uses interface Leds;
+uses interface Timer<TMilli> as Timer0;
+uses interface Packet;
+uses interface AMPacket;
+uses interface AMSend;
+uses interface SplitControl as AMControl;
+uses interface Receive;
+uses interface CC2420Packet;
+}
+
+implementation 
+{
+bool busy = FALSE;
+message_t pkt;
+uint16_t counter=1;
+
+uint16_t getRssi(message_t *msg)
+	{
+		return (uint16_t)call CC2420Packet.getRssi(msg);
+	}
+
+event void Boot.booted()
+{
+	call AMControl.start();
+}
+
+event void Timer0.fired()
+{
+	if(TOS_NODE_ID==3)
+	{
+	if(!busy)
+	{
+		message *btrpkt =(message*)(call Packet.getPayload(&pkt,sizeof(message)));
+		btrpkt ->nodeid =TOS_NODE_ID;
+		btrpkt ->counter=counter;
+		if (call AMSend.send(RX, &pkt, sizeof(message)) == SUCCESS) 
+		{
+		      busy = TRUE;
+    		}
+	}
+	counter ++;
+	//call Leds.set(btrpkt->counter);
+	}
+}
+
+event void AMControl.startDone(error_t err)
+{
+	if(err==SUCCESS)
+	{	
+		call Timer0.startPeriodic(2000);
+	}
+	else
+	{	
+		call AMControl.start();
+	}
+}
+
+event void AMControl.stopDone(error_t err) { }
+event void AMSend.sendDone(message_t* msg, error_t error) {
+    if (&pkt == msg) {
+      busy = FALSE;
+    }
+  }
+
+event message_t* Receive.receive(message_t* msg, void* payload,uint8_t len)
+{
+	if(TOS_NODE_ID==RX)
+	{
+		if(len==sizeof(message))
+		{
+			message* btrpkt =(message*)payload;
+			if(btrpkt->nodeid==TX)
+			{
+				call Leds.set(btrpkt->counter);
+				printf("\n RSSI is = %d \n",getRssi(msg));
+				printfflush();
+			}
+			else 
+			{
+				call Leds.set(0);
+			}
+		}
+	return msg;
+	}
+}
+
+}

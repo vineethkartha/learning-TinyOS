@@ -1,0 +1,4 @@
+COMPONENT=chainAppC
+CFLAGS += -I$(TOSDIR)/lib/printf
+#CFLAGS += -DPRINTF_BUFFER_SIZE=250
+include $(MAKERULES)
